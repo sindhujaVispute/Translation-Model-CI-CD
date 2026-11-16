@@ -1,0 +1,13 @@
+# Runtime and test dependencies for translation-model-mlops.
+#
+# Version ranges are NOT yet verified against Python 3.10 on PyPI: they were written
+# without network access. Run scripts/verify_real_environment.py on a machine with
+# Python 3.10, then `pip freeze > requirements.lock` and commit the lock file.
+mlflow>=2.14,<4
+sacrebleu>=2.4,<3
+python-dotenv>=1.0,<2
+pytest>=7.4
+pytest-cov>=4.1
+# Needed only to evaluate a REAL model (CTranslate2Translator imports it lazily).
+# Not required for the unit tests; uncomment when integrating the real model.
+# ctranslate2>=4.0,<5
